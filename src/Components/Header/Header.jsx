@@ -32,15 +32,7 @@ const Header = () => {
                 <Link to="/about">About</Link>
               </li>
               <li>
-                <a>Services</a>
-                <ul className="p-2">
-                  <li>
-                    <a>Website Design</a>
-                  </li>
-                  <li>
-                    <a>Website Development</a>
-                  </li>
-                </ul>
+                <Link to={"/posts"}>Posts</Link>
               </li>
               <li>
                 <Link to="/contact">Contact </Link>
@@ -57,17 +49,7 @@ const Header = () => {
               <Link to="/about">About</Link>
             </li>
             <li>
-              <details>
-                <summary>Services</summary>
-                <ul className="p-2">
-                  <li>
-                    <a>Website Design</a>
-                  </li>
-                  <li>
-                    <a>Website Development</a>
-                  </li>
-                </ul>
-              </details>
+              <Link to={"/posts"}>Posts</Link>
             </li>
             <li>
               <Link to="/contact">Contact </Link>
@@ -80,11 +62,6 @@ const Header = () => {
           </Link>
         </div>
       </div>
-      <h1 className="text-3xl font-bold">This is the header component</h1>
-      <nav className="navLink">
-        <Link to="/about">About</Link>
-        <Link to="/contact">Contact</Link>
-      </nav>
     </div>
   );
 };
