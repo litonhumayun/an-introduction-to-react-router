@@ -1,11 +1,14 @@
 import { useLoaderData } from "react-router";
+import Post from "../Post/Post";
 
 function Posts() {
   const posts = useLoaderData();
 
   return (
-    <div>
-      <h1>Posts:{posts.length}</h1>
+    <div className="grid grid-cols-3 gap-2">
+      {posts.map((post) => (
+        <Post key={post.id} post={post} />
+      ))}
     </div>
   );
 }
