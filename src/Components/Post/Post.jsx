@@ -1,11 +1,17 @@
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 
 function Post({ post }) {
   const { id, title, body } = post;
+  const navigate = useNavigate();
+
+  const handleShowDetails = () => {
+    navigate(`/post/${id}`);
+  };
   return (
     <div className="flex flex-col max-w-lg p-6 space-y-6 overflow-hidden rounded-lg shadow-md bg-gray-900 text-gray-100">
       <div className="flex space-x-4">
         <div className="flex flex-col space-y-1">
+          <p>Post No: {id}</p>
           <a
             rel="noopener noreferrer"
             href="#"
@@ -73,6 +79,9 @@ function Post({ post }) {
           </button>
         </div>
       </div>
+      <button onClick={handleShowDetails} className="btn btn-primary">
+        Show Details
+      </button>
     </div>
   );
 }
