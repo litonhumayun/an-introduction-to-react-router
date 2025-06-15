@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { NavLink } from "react-router-dom";
 import "../Header/Header.css";
 
 const Header = () => {
@@ -29,37 +29,91 @@ const Header = () => {
               className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
             >
               <li>
-                <Link to="/about">About</Link>
+                <NavLink
+                  to="/about"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-300  font-bold" : "text-black-700"
+                  }
+                >
+                  About
+                </NavLink>
               </li>
               <li>
-                <Link to={"/posts"}>Posts</Link>
+                <NavLink
+                  to={"/posts"}
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600 font-bold" : "text-black-700"
+                  }
+                >
+                  Posts
+                </NavLink>
               </li>
               <li>
-                <Link to="/contact">Contact </Link>
+                <NavLink
+                  to="/contact"
+                  className={({ isActive }) =>
+                    isActive ? "text-blue-600 font-bold" : "text-black-700"
+                  }
+                >
+                  Contact{" "}
+                </NavLink>
               </li>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">
+          <NavLink
+            to="/"
+            className={({ isActive }) =>
+              `btn btn-ghost text-xl ${
+                isActive ? "text-blue-600 font-bold" : "text-black-700"
+              }`
+            }
+          >
             Home
-          </Link>
+          </NavLink>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             <li>
-              <Link to="/about">About</Link>
+              <NavLink
+                to="/about"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-600 font-bold" : "text-black-700"
+                }
+              >
+                About
+              </NavLink>
             </li>
             <li>
-              <Link to={"/posts"}>Posts</Link>
+              <NavLink
+                to="/posts"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-600 font-bold" : "text-black-700"
+                }
+              >
+                Posts
+              </NavLink>
             </li>
             <li>
-              <Link to="/contact">Contact </Link>
+              <NavLink
+                to="/contact"
+                className={({ isActive }) =>
+                  isActive ? "text-blue-600 font-bold" : "text-black-700"
+                }
+              >
+                Contact
+              </NavLink>
             </li>
           </ul>
         </div>
         <div className="navbar-end">
-          <Link to="/users" className="btn">
+          <NavLink
+            to="/users"
+            className={({ isActive }) =>
+              `btn ${isActive ? "text-blue-600 font-bold" : "text-black-700"}`
+            }
+          >
             Users
-          </Link>
+          </NavLink>
         </div>
       </div>
     </div>
